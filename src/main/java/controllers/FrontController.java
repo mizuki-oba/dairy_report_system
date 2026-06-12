@@ -66,7 +66,7 @@ public class FrontController extends HttpServlet {
              String actionString = request.getParameter(ForwardConst.ACT.getValue());
 
              // 該当するActionオブジェクトを生成(例:リクエストからパラメータ action=Employee の場合、actions.EmployeeActionオブジェクト)
-             type = Class.forName(String.format("action.%Action", actionString));
+             type = Class.forName(String.format("actions.%sAction", actionString));
 
              // ActionBaseのオブジェクトにキャスト(例:actions.EmployeeActionオブジェクト→actions.ActionBaseオブジェクト)
              action = (ActionBase)(type.asSubclass(ActionBase.class)
